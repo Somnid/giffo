@@ -1,0 +1,165 @@
+:root{
+	--primary-color: orange;
+	--primary-color-dark: darkorange;
+	--complimentary-color: blue;
+	--complimentary-color-dark: darkblue;
+	--warn-color: #cccc00;
+	--warn-background: #FDFFB5;
+	--negative-color: #cc0000;
+	--negative-background:  #ffebeb;
+	--info-color: #0000cc;
+	--info-background: #d9dbff;
+	--positive-color: #00cc00;
+	--positive-background: #e2ffd9;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	position: relative;
+}
+*:not(:defined){
+	display: none;
+}
+body,html {
+	margin : 0px;
+	padding: 0px;
+	font-family: arial;
+}
+label, button, textarea, input {
+	display: block;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 0px;
+}
+button {
+	margin: 0px;
+}
+ul, ol {
+	padding: 0px;
+	margin: 0px;
+}
+li {
+	list-style: none;
+}
+textarea,
+input[type='text'],
+input[type='email'],
+input[type='date']
+input[type='tel'],
+input[type='url'] {
+	width: 100%;
+	height: 30px;
+	border: 1px solid #ccc;
+}
+textarea {
+	height: 350px;
+}
+dialog {
+	border: none;
+	box-shadow: 0px 0px 3px 3px #ccc;
+}
+button,
+.link-button {
+	background: var(--primary-color);
+	border: none;
+	border-radius: 5px;
+	padding: 8px;
+	color: white;
+	font-size: 12px;
+	cursor: pointer;
+	margin-right: 8px;
+}
+button:hover,
+.link-button:hover {
+	background: var(--primary-color-dark);
+}
+button:focus,
+.link-button:focus {
+	outline: none;
+}
+button.toggle,
+.link-button.toggle{
+	position: relative;
+	border-radius: 15px;
+	width: 60px;
+	height: 30px;
+	border: 1px solid #ccc;
+	padding: 0px;
+	background: var(--complimentary-color);
+	transition: 0.25s;
+}
+button.toggle::after,
+.link-button.toggle::after{
+	content: "";
+	display: block;
+	border-radius: 15px;
+	width: 30px;
+	height: 28px;
+	border: 1px solid #ccc;
+	background: white;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+button.toggle.on,
+.link-button.toggle.on {
+	border: 1px solid #ccc;
+	background-color: red
+}
+button.toggle.on::after{
+	transform: translateX(30px);
+}
+
+button.toggled:hover,
+.link-button.toggled:hover {
+	background: var(--complimentary-color-dark);
+}
+.hidden {
+	display: none;
+}
+.row{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.stack{
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.stack-stretch{
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+.error {
+	color: var(--negative-color);
+	background: var(--negative-background);
+	border: 1px solid var(--negative-color);
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.success {
+	color: var(--positive-color);
+	background: var(--success-background);
+	border: 1px solid var(--success-color);
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.warn {
+	color: var(--warn-color);
+	background: var(--warn-background);
+	border: 1px solid var(--warn-color);
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.info {
+	color: var(--info-color);
+	background: var(--info-background);
+	border: 1px solid var(--info-color);
+	padding: 5px;
+	margin-bottom: 10px;
+}
